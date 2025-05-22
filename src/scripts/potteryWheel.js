@@ -17,3 +17,5 @@ export const makePottery = (shape, weight, height) => {
     // Return the new pottery object
     return pottery
 }
+
+

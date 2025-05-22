@@ -33,4 +33,5 @@ export const toSellOrNotToSell = (pottery) => {
 export const usePottery = () => {
     const potteryCopy = [...potteryToSell]
     return potteryCopy
-}
+}  
+

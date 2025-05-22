@@ -35,3 +35,5 @@ console.log("Pottery for sale:", usePottery())
 
 // Invoke the component function that renders the HTML list
 
+
+

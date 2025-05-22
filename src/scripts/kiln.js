@@ -13,3 +13,4 @@ export const firePottery = (pottery, temp) => {
     // Return the modified pottery object
     return pottery
 }
+

@@ -1,6 +1,7 @@
 import { makePottery } from "./potteryWheel.js"
 import { firePottery } from "./kiln.js"
 import { toSellOrNotToSell, usePottery } from "./potteryCatalog.js"
+import { PotteryList } from "./potteryList.js"
 
 // Make 5 pieces of pottery at the wheel
 let mug = makePottery("Mug", 3, 6)
@@ -16,12 +17,13 @@ let firedPlate = firePottery(plate, 2100)
 let firedVase = firePottery(vase, 2200)
 let firedCup = firePottery(cup, 2150)
 
-// Check work
-console.log("Fired Mug:", firedMug)
-console.log("Fired Bowl:", firedBowl)
-console.log("Fired Plate:", firedPlate)
-console.log("Fired Vase:", firedVase)
-console.log("Fired Cup:", firedCup)
+// Check our fired pottery
+console.log("=== FIRED POTTERY ===")
+console.log("Mug (2000°):", firedMug)
+console.log("Bowl (2300° - will be cracked):", firedBowl)
+console.log("Plate (2100°):", firedPlate)
+console.log("Vase (2200°):", firedVase)
+console.log("Cup (2150°):", firedCup)
 
 // Determine which ones should be sold, and their price
 let pricedMug = toSellOrNotToSell(firedMug)
@@ -31,9 +33,14 @@ let pricedVase = toSellOrNotToSell(firedVase)
 let pricedCup = toSellOrNotToSell(firedCup)
 
 // Check our catalog
-console.log("Pottery for sale:", usePottery())
+console.log("\n=== POTTERY CATALOG ===")
+console.log("Items for sale:", usePottery())
 
 // Invoke the component function that renders the HTML list
+const potteryHTML = PotteryList()
+
+// Get the article element and update its HTML
+document.querySelector(".potteryList").innerHTML = potteryHTML
 
 
 

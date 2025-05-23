@@ -1,14 +1,14 @@
 // Import the usePottery function to get our catalog
-import { usePottery } from "./potteryCatalog.js"
+import { usePottery } from "./potteryCatalog.js";
 
 // This function creates the HTML for our pottery list
 export const PotteryList = () => {
-    // Get our list of pottery to sell
-    const potteryToSell = usePottery()
-    let potteryHTML = ""
+  // Get our list of pottery to sell
+  const potteryToSell = usePottery();
+  let potteryHTML = "";
 
-    for (const pottery of potteryToSell) {
-        potteryHTML += `
+  for (const pottery of potteryToSell) {
+    potteryHTML += `
         <section class="pottery" id="pottery--${pottery.id}">
           <h2 class="pottery__shape">${pottery.shape}</h2>
           <div class="pottery__properties">
@@ -16,9 +16,9 @@ export const PotteryList = () => {
           </div>
           <div class="pottery__price">Price is ${pottery.price}</div>
         </section>
-        `
-    }
+        `;
+  }
 
-    // Return all the HTML
-    return potteryHTML
-}
+  // Return all the HTML
+  return potteryHTML;
+};

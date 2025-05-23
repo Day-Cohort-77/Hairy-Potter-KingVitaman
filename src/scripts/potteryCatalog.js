@@ -1,37 +1,33 @@
-// an empty list called
+// This is our list to store pottery that we want to sell
 let potteryToSell = []
-   /* Step 3: Make a function called toSellOrNotToSell that:
-      - Takes in one thing: our pottery object
-      - If the pottery is cracked:
-         * Don't do anything else
-      - If the pottery is not cracked:
-         * If it weighs 6 or more:
-            - Add a price of $40
-         * If it weighs less than 6:
-            - Add a price of $20
-         * Put it in our potteryToSell list
-      - Give back our pottery with the new price 
-      */
+   
+// This function decides if pottery should be sold and sets its price
 export const toSellOrNotToSell = (pottery) => {
+    // If the pottery is cracked, we can't sell it
     if (pottery.cracked === true) {
         return pottery
     }
+    // If the pottery is not cracked, we can sell it
     if (pottery.cracked === false) {
+        // Set the price based on weight
         if (pottery.weight < 6) {
-            pottery.price = 20
+            pottery.price = 20  // Light pottery costs $20
         }
         else {
-            pottery.price = 40
+            pottery.price = 40  // Heavy pottery costs $40
         }
+        // Add the pottery to our list of items to sell
         potteryToSell.push(pottery)
     }
     
+    // Give back the pottery with its new price
     return pottery
 }
-   /*Step 4: Make a function called usePottery that:
-      - Gives back a copy of our potteryToSell list */
+   
+// This function gives us a copy of our list of pottery to sell
 export const usePottery = () => {
+    // Make a copy of the array using the spread operator
     const potteryCopy = [...potteryToSell]
+    // Give back the copy
     return potteryCopy
-}  
-
+}

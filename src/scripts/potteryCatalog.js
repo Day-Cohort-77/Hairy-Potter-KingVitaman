@@ -5,10 +5,10 @@ let potteryToSell = [];
 export const toSellOrNotToSell = (pottery) => {
   // If the pottery is cracked, we can't sell it
   if (pottery.cracked === true) {
-    return pottery;
+    return pottery; // pottery.price = 2.50
   }
   // If the pottery is not cracked, we can sell it
-  if (pottery.cracked === false) {
+  if (pottery.cracked === false) {  //else
     // Set the price based on weight
     if (pottery.weight < 6) {
       pottery.price = 20; // Light pottery costs $20
